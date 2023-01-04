@@ -780,7 +780,7 @@ TEST(OfflineDatabase, MapboxTileLimitExceeded) {
     uint64_t limit = 60;
 
     OfflineDatabase db(":memory:", fixture::tileServerOptions);
-    db.setOfflineMapboxTileCountLimit(limit);
+    db.setOfflineVietmapTileCountLimit(limit);
 
     Response response;
     response.data = randomString(4096);
@@ -1354,7 +1354,7 @@ TEST(OfflineDatabase, BatchInsertion) {
 TEST(OfflineDatabase, BatchInsertionMapboxTileCountExceeded) {
     FixtureLog log;
     OfflineDatabase db(":memory:", fixture::tileServerOptions);
-    db.setOfflineMapboxTileCountLimit(1);
+    db.setOfflineVietmapTileCountLimit(1);
     db.setMaximumAmbientCacheSize(1024 * 100);
 
     OfflineTilePyramidRegionDefinition definition { "", LatLngBounds::world(), 0, INFINITY, 1.0, false };
@@ -1838,7 +1838,7 @@ TEST(OfflineDatabase, MergeDatabaseWithSingleRegionTooManyNewTiles) {
     util::copyFile(filename_sideload, "test/fixtures/offline_database/sideload_sat_multiple.db");
 
     OfflineDatabase db(":memory:", fixture::tileServerOptions);
-    db.setOfflineMapboxTileCountLimit(1);
+    db.setOfflineVietmapTileCountLimit(1);
 
     auto result = db.mergeDatabase(filename_sideload);
     EXPECT_FALSE(result);
@@ -1854,7 +1854,7 @@ TEST(OfflineDatabase, MergeDatabaseWithSingleRegionTooManyExistingTiles) {
     util::copyFile(filename_sideload, "test/fixtures/offline_database/satellite_test.db");
 
     OfflineDatabase db(filename, fixture::tileServerOptions);
-    db.setOfflineMapboxTileCountLimit(2);
+    db.setOfflineVietmapTileCountLimit(2);
 
     auto result = db.mergeDatabase(filename_sideload);
     EXPECT_THROW(std::rethrow_exception(result.error()), MapboxTileLimitExceededException);

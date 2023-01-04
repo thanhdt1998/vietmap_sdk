@@ -24,16 +24,16 @@ namespace android {
 class FileSource {
 public:
 
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/storage/FileSource"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/storage/FileSource"; };
 
     struct ResourceTransformCallback {
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/storage/FileSource$ResourceTransformCallback"; }
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/storage/FileSource$ResourceTransformCallback"; }
 
         static std::string onURL(jni::JNIEnv&, const jni::Object<FileSource::ResourceTransformCallback>&, int, std::string);
     };
 
     struct ResourcesCachePathChangeCallback {
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/storage/FileSource$ResourcesCachePathChangeCallback";}
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/storage/FileSource$ResourcesCachePathChangeCallback";}
 
         static void onSuccess(jni::JNIEnv&,
                               const jni::Object<FileSource::ResourcesCachePathChangeCallback>&,

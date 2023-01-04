@@ -19,7 +19,7 @@ public:
 
     class ListOfflineRegionsCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineManager$ListOfflineRegionsCallback";}
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineManager$ListOfflineRegionsCallback";}
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineManager::ListOfflineRegionsCallback>&, std::exception_ptr);
 
@@ -31,7 +31,7 @@ public:
 
     class CreateOfflineRegionCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineManager$CreateOfflineRegionCallback"; }
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineManager$CreateOfflineRegionCallback"; }
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineManager::CreateOfflineRegionCallback>&, std::exception_ptr);
 
@@ -43,7 +43,7 @@ public:
 
     class MergeOfflineRegionsCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineManager$MergeOfflineRegionsCallback";}
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineManager$MergeOfflineRegionsCallback";}
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineManager::MergeOfflineRegionsCallback>&, std::exception_ptr);
 
@@ -54,21 +54,21 @@ public:
     };
 
     struct FileSourceCallback {
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineManager$FileSourceCallback";}
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineManager$FileSourceCallback";}
 
         static void onSuccess(jni::JNIEnv&, const jni::Object<OfflineManager::FileSourceCallback>&);
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineManager::FileSourceCallback>&, const jni::String&);
     };
 
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineManager"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineManager"; };
 
     static void registerNative(jni::JNIEnv&);
 
     OfflineManager(jni::JNIEnv&, const jni::Object<FileSource>&);
     ~OfflineManager();
 
-    void setOfflineMapboxTileCountLimit(jni::JNIEnv&, jni::jlong limit);
+    void setOfflineVietmapTileCountLimit(jni::JNIEnv&, jni::jlong limit);
 
     void listOfflineRegions(jni::JNIEnv&, const jni::Object<FileSource>&, const jni::Object<ListOfflineRegionsCallback>& callback);
 

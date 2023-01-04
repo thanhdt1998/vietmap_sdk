@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
 
-    <com.mapbox.mapboxsdk.maps.MapView
+    <vn.vietmap.vietmapsdk.maps.MapView
         android:id="@+id/mapView"
         android:layout_margin="50dp"
         android:layout_width="match_parent"

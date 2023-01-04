@@ -14,7 +14,7 @@
 /platform/android/x86_64
 /cmake-build-debug
 /platform/android/build
-/platform/android/MapboxGLAndroidSDK/src/main/assets/sdk_versions/com.mapbox.mapboxsdk
+/platform/android/MapboxGLAndroidSDK/src/main/assets/sdk_versions/vn.vietmap.vietmapsdk
 /platform/ios/platform/ios/Mapbox.playground/build/
 *.code-workspace
 

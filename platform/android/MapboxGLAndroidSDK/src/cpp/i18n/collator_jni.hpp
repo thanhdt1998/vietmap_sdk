@@ -50,7 +50,7 @@ public:
 
 class StringUtils {
 public:
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/utils/StringUtils"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/utils/StringUtils"; };
 
     static jni::Local<jni::String> unaccent(jni::JNIEnv&, const jni::String&);
 

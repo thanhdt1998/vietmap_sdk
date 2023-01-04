@@ -124,7 +124,7 @@ public:
         }
     }
 
-    void setOfflineMapboxTileCountLimit(uint64_t limit) { db->setOfflineMapboxTileCountLimit(limit); }
+    void setOfflineVietmapTileCountLimit(uint64_t limit) { db->setOfflineVietmapTileCountLimit(limit); }
 
     void reopenDatabaseReadOnly(bool readOnly) { db->reopenDatabaseReadOnly(readOnly); }
 
@@ -308,8 +308,8 @@ void DatabaseFileSource::getOfflineRegionStatus(
     impl->actor().invoke(&DatabaseFileSourceThread::getRegionStatus, region.getID(), std::move(callback));
 }
 
-void DatabaseFileSource::setOfflineMapboxTileCountLimit(uint64_t limit) const {
-    impl->actor().invoke(&DatabaseFileSourceThread::setOfflineMapboxTileCountLimit, limit);
+void DatabaseFileSource::setOfflineVietmapTileCountLimit(uint64_t limit) const {
+    impl->actor().invoke(&DatabaseFileSourceThread::setOfflineVietmapTileCountLimit, limit);
 }
 
 void DatabaseFileSource::setProperty(const std::string& key, const mapbox::base::Value& value) {

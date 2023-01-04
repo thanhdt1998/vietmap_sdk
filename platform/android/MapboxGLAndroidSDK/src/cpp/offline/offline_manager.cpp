@@ -37,8 +37,8 @@ OfflineManager::OfflineManager(jni::JNIEnv& env, const jni::Object<FileSource>& 
 
 OfflineManager::~OfflineManager() {}
 
-void OfflineManager::setOfflineMapboxTileCountLimit(jni::JNIEnv&, jni::jlong limit) {
-    fileSource->setOfflineMapboxTileCountLimit(limit);
+void OfflineManager::setOfflineVietmapTileCountLimit(jni::JNIEnv&, jni::jlong limit) {
+    fileSource->setOfflineVietmapTileCountLimit(limit);
 }
 
 void OfflineManager::listOfflineRegions(jni::JNIEnv& env_, const jni::Object<FileSource>& jFileSource_, const jni::Object<ListOfflineRegionsCallback>& callback_) {
@@ -216,7 +216,7 @@ void OfflineManager::registerNative(jni::JNIEnv& env) {
         jni::MakePeer<OfflineManager, const jni::Object<FileSource>&>,
         "initialize",
         "finalize",
-        METHOD(&OfflineManager::setOfflineMapboxTileCountLimit, "setOfflineMapboxTileCountLimit"),
+        METHOD(&OfflineManager::setOfflineVietmapTileCountLimit, "setOfflineVietmapTileCountLimit"),
         METHOD(&OfflineManager::listOfflineRegions, "listOfflineRegions"),
         METHOD(&OfflineManager::createOfflineRegion, "createOfflineRegion"),
         METHOD(&OfflineManager::mergeOfflineRegions, "mergeOfflineRegions"),

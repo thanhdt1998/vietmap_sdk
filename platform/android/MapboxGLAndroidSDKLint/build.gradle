@@ -32,6 +32,6 @@ compileTestKotlin {
 
 jar {
     manifest {
-        attributes("Lint-Registry-v2": "com.mapbox.mapboxsdk.lint.MapboxIssueRegistry")
+        attributes("Lint-Registry-v2": "vn.vietmap.vietmapsdk.lint.MapboxIssueRegistry")
     }
 }

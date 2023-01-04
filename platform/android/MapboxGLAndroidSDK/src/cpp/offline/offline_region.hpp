@@ -14,12 +14,12 @@ class OfflineRegion {
 public:
     class OfflineRegionObserver {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineRegion$OfflineRegionObserver"; };
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineRegion$OfflineRegionObserver"; };
     };
 
     class OfflineRegionStatusCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineRegion$OfflineRegionStatusCallback"; };
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineRegion$OfflineRegionStatusCallback"; };
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineRegionStatusCallback>&, std::exception_ptr);
 
@@ -30,7 +30,7 @@ public:
 
     class OfflineRegionDeleteCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineRegion$OfflineRegionDeleteCallback"; };
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineRegion$OfflineRegionDeleteCallback"; };
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineRegionDeleteCallback>&, std::exception_ptr);
 
@@ -39,7 +39,7 @@ public:
 
     class OfflineRegionInvalidateCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineRegion$OfflineRegionInvalidateCallback"; };
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineRegion$OfflineRegionInvalidateCallback"; };
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineRegionInvalidateCallback>&, std::exception_ptr);
 
@@ -48,7 +48,7 @@ public:
 
     class OfflineRegionUpdateMetadataCallback {
     public:
-        static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineRegion$OfflineRegionUpdateMetadataCallback"; };
+        static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineRegion$OfflineRegionUpdateMetadataCallback"; };
 
         static void onError(jni::JNIEnv&, const jni::Object<OfflineRegionUpdateMetadataCallback>&, std::exception_ptr);
 
@@ -57,7 +57,7 @@ public:
                             mbgl::optional<mbgl::OfflineRegionMetadata>);
     };
 
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/offline/OfflineRegion"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/offline/OfflineRegion"; };
 
     OfflineRegion(jni::JNIEnv&, jni::jlong, const jni::Object<FileSource>&);
 

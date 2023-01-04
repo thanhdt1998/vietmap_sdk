@@ -5,12 +5,12 @@ android {
     compileSdkVersion androidVersions.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.mapbox.mapboxsdk.testapp"
+        applicationId "vn.vietmap.vietmapsdk.testapp"
         minSdkVersion androidVersions.minSdkVersion
         targetSdkVersion androidVersions.targetSdkVersion
         versionCode 13
         versionName "6.0.0"
-        testInstrumentationRunner "com.mapbox.mapboxsdk.InstrumentationRunner"
+        testInstrumentationRunner "vn.vietmap.vietmapsdk.InstrumentationRunner"
     }
 
     compileOptions {

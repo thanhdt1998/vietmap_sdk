@@ -41,7 +41,7 @@ class MapRenderer;
 class NativeMapView : public MapObserver {
 public:
 
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/maps/NativeMapView"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/maps/NativeMapView"; };
 
     static void registerNative(jni::JNIEnv&);
 

@@ -70,7 +70,7 @@ Switching from mapbox-java libraries to [maplibre fork](https://github.com/mapli
 ## 9.2.0 - May 7, 2020
 ### Features
  - Added the `distance` expression for calculating the shortest distance between an evaluated feature and a given GeoJSON object. ([#339](https://github.com/mapbox/mapbox-gl-native-android/pull/339))
- - The [`SymbolLayer.iconTextFit`](https://docs.mapbox.com/android/api/map-sdk/9.2.0-beta.1/com/mapbox/mapboxsdk/style/layers/PropertyFactory.html#iconTextFit-com.mapbox.mapboxsdk.style.expressions.Expression-) property now respects the stretch metadata of any nine-part stretchable image passed into the `style.addImage` method. You can define the stretchable area of an image by configuring the `stretchX`, `stretchY`, `content` options on `Style.addImage` to append the requisite [metadata](https://github.com/mapbox/mapbox-gl-js/issues/8917). ([#314](https://github.com/mapbox/mapbox-gl-native-android/pull/314))
+ - The [`SymbolLayer.iconTextFit`](https://docs.mapbox.com/android/api/map-sdk/9.2.0-beta.1/com/mapbox/mapboxsdk/style/layers/PropertyFactory.html#iconTextFit-vn.vietmap.vietmapsdk.style.expressions.Expression-) property now respects the stretch metadata of any nine-part stretchable image passed into the `style.addImage` method. You can define the stretchable area of an image by configuring the `stretchX`, `stretchY`, `content` options on `Style.addImage` to append the requisite [metadata](https://github.com/mapbox/mapbox-gl-js/issues/8917). ([#314](https://github.com/mapbox/mapbox-gl-native-android/pull/314))
  - Added methods to set and get the sort key of features in a `CircleLayer` at runtime. Features with a higher sort key will appear above features with a lower sort key. ([#322](https://github.com/mapbox/mapbox-gl-native-android/pull/322))
  - Introduced `Source.setVolatile` to disable ambient caching of tiles from a source. Use this option on transient sources, such as traffic tilesets, if not showing tiles from a source is preferable to showing outdated tiles should an update request fail. ([#355](https://github.com/mapbox/mapbox-gl-native-android/pull/355))
  - Introduced `Source.minimumTileUpdateInterval` to override the expiration time set via HTTP headers with a longer expiration time on the client. ([#355](https://github.com/mapbox/mapbox-gl-native-android/pull/355))
@@ -100,13 +100,13 @@ Switching from mapbox-java libraries to [maplibre fork](https://github.com/mapli
  - Added `in` expression for testing whether an item exists in an array or a substring exists in a string. ([#171](https://github.com/mapbox/mapbox-gl-native-android/pull/171))
  - Introduced APIs and callbacks for customizing the style used in a `MapSnapshotter` snapshotter with runtime styling methods. ([#268](https://www.github.com/mapbox/mapbox-gl-native-android/pull/268), [#292](https://www.github.com/mapbox/mapbox-gl-native-android/pull/292))
  - Added methods to set and get the sort key of features in a `FillLayer` and `LineLayer` at runtime. Features with a higher sort key will appear above features with a lower sort key. ([#209](https://github.com/mapbox/mapbox-gl-native-android/pull/209))
- - Introduced `MapboxMap.setMaxPitchPreference` and `MapboxMap.setMinPitchPreference` to constrain a map's pitch. ([#199](https://github.com/mapbox/mapbox-gl-native-android/pull/199))
+ - Introduced `VietmapMap.setMaxPitchPreference` and `VietmapMap.setMinPitchPreference` to constrain a map's pitch. ([#199](https://github.com/mapbox/mapbox-gl-native-android/pull/199))
  - Introduced ability to configure the zoom level(s) that tiles are prefetched from by `Source`. This overrides the  tile prefetch setting defined by the `Map` instance. ([#184](https://github.com/mapbox/mapbox-gl-native-android/pull/184))
 
 ### Performance improvements
  - Increased stability of label placement when the map is tilted. ([#16287](https://github.com/mapbox/mapbox-gl-native/pull/16287))
  - Improved the performance of loading a style that has many style images. ([#16187](https://github.com/mapbox/mapbox-gl-native/pull/16187))
- - Fixed a memory leak during zooming when `MapboxMapOptions.debugActive` is enabled. ([#15179](https://github.com/mapbox/mapbox-gl-native/issues/15179), fixed by [#15395](https://github.com/mapbox/mapbox-gl-native/pull/15395))
+ - Fixed a memory leak during zooming when `VietmapMapOptions.debugActive` is enabled. ([#15179](https://github.com/mapbox/mapbox-gl-native/issues/15179), fixed by [#15395](https://github.com/mapbox/mapbox-gl-native/pull/15395))
 
 ### Bug fixes
  - Downloaded offline packs no longer reduce the storage space available for ambient caching of tiles and other resources. ([#15622](https://github.com/mapbox/mapbox-gl-native/pull/15622))
@@ -165,7 +165,7 @@ Switching from mapbox-java libraries to [maplibre fork](https://github.com/mapli
  - Update codebase to androidX. [#129](https://github.com/mapbox/mapbox-gl-native-android/pull/129)
 
 ### Bug fixes
- - Deprecated `MapboxMap#cycleDebugOptions` and fixed an `UnsatisfiedLinkError` when accessed. [#104](https://github.com/mapbox/mapbox-gl-native-android/pull/104)
+ - Deprecated `VietmapMap#cycleDebugOptions` and fixed an `UnsatisfiedLinkError` when accessed. [#104](https://github.com/mapbox/mapbox-gl-native-android/pull/104)
  - Fixed a null pointer issue on the public static getters of `Mapbox.java`, in case the user hasn't called `Mapbox.getInstance()`. [#128](https://github.com/mapbox/mapbox-gl-native-android/pull/128)
 
 ## 8.6.0 - December 20, 2019
@@ -325,7 +325,7 @@ Switching from mapbox-java libraries to [maplibre fork](https://github.com/mapli
 
 ### Features
  - Introduce `clusterProperties` option for aggregated cluster properties. [#15425](https://github.com/mapbox/mapbox-gl-native/pull/15425)
- - Expose the `CameraPosition#padding` field and associated utility camera position builders. This gives a choice to set a persisting map padding immediately during a transition instead of setting it lazily `MapboxMap#setPadding`, which required scheduling additional transition to be applied. This also deprecates `MapboxMap#setPadding` as there should be no need for a lazy padding setter. [#15444](https://github.com/mapbox/mapbox-gl-native/pull/15444)
+ - Expose the `CameraPosition#padding` field and associated utility camera position builders. This gives a choice to set a persisting map padding immediately during a transition instead of setting it lazily `VietmapMap#setPadding`, which required scheduling additional transition to be applied. This also deprecates `VietmapMap#setPadding` as there should be no need for a lazy padding setter. [#15444](https://github.com/mapbox/mapbox-gl-native/pull/15444)
  - Add number-format expression that allows to format a number to a string, with configurations as minimal/maximal fraction and locale/currency. [#15424](https://github.com/mapbox/mapbox-gl-native/pull/15424)
  - Enable using of `text-offset` option together with `text-variable-anchor` (if `text-radial-offset` option is not provided). If used with `text-variable-anchor`, input values will be taken as absolute values. Offsets along the x- and y-axis will be applied automatically based on the anchor position. [#15542](https://github.com/mapbox/mapbox-gl-native/pull/15542)
 
@@ -492,7 +492,7 @@ This release changes how offline tile requests are billed — they are now bille
 ### Minor features and improvements
  - Improve performance of queryRenderedFeatures by removing unnecessary iterations over vectors and unneeded layers [#14930](https://github.com/mapbox/mapbox-gl-native/pull/14930)
  - Decrease the minimum pixel distance between the current camera position and the target required to interpolate during camera animation [#15073](https://github.com/mapbox/mapbox-gl-native/pull/15073)
- - Introduce `MapboxMapOptions` facility creation method [#15069](https://github.com/mapbox/mapbox-gl-native/pull/15069)
+ - Introduce `VietmapMapOptions` facility creation method [#15069](https://github.com/mapbox/mapbox-gl-native/pull/15069)
  - Throw configuration exception when accessing Mapbox services with an invalid token [#15081](https://github.com/mapbox/mapbox-gl-native/pull/15081)
  - Allow setting a null access token in the runtime [#15081](https://github.com/mapbox/mapbox-gl-native/pull/15081)
  - Ensure location shadow's gradient radius is greater than 0 [#15099](https://github.com/mapbox/mapbox-gl-native/pull/15099)
@@ -524,7 +524,7 @@ This release changes how offline tile requests are billed — they are now bille
  - Fix performance regression by switching back to a more compact line attributes layout [#14851](https://github.com/mapbox/mapbox-gl-native/pull/14851)
  - Fix a bug that restricted camera viewport after camera bounds were reset [#14882](https://github.com/mapbox/mapbox-gl-native/pull/14882)
  - Fix a bug that ignored floating point values during core to platform color conversion [#14954](https://github.com/mapbox/mapbox-gl-native/pull/14954)
- - Implemented asymmetric center of perspective: fixed an issue that caused the focal point to be always based on the view's horizontal center when setting [MapboxMap setPadding](https://docs.mapbox.com/android/api/map-sdk/8.0.0/com/mapbox/mapboxsdk/maps/MapboxMap.html#setPadding-int-int-int-int-). [#14664](https://github.com/mapbox/mapbox-gl-native/pull/14664)
+ - Implemented asymmetric center of perspective: fixed an issue that caused the focal point to be always based on the view's horizontal center when setting [VietmapMap setPadding](https://docs.mapbox.com/android/api/map-sdk/8.0.0/com/mapbox/mapboxsdk/maps/VietmapMap.html#setPadding-int-int-int-int-). [#14664](https://github.com/mapbox/mapbox-gl-native/pull/14664)
 
 ### Minor features and improvements
  - Allow null updates to GeoJsonSource [#14898](https://github.com/mapbox/mapbox-gl-native/pull/14898)
@@ -583,7 +583,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
  - Return color string values in the [0-255] range [#14233](https://github.com/mapbox/mapbox-gl-native/pull/14233)
  - Resume file source to complete resources cache path change [#14546](https://github.com/mapbox/mapbox-gl-native/pull/14546)
  - Remove binary shader support [#14707](https://github.com/mapbox/mapbox-gl-native/pull/14707)
- - Deprecate MapboxMapOptions empty constructor [#14748](https://github.com/mapbox/mapbox-gl-native/pull/14748)
+ - Deprecate VietmapMapOptions empty constructor [#14748](https://github.com/mapbox/mapbox-gl-native/pull/14748)
 
 
 ### Features
@@ -718,7 +718,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
  - Clear camera callbacks' message queue when the map is destroyed [#14292](https://github.com/mapbox/mapbox-gl-native/pull/14292)
  - Use a valid gestures focal point when resetting a manager [#14284](https://github.com/mapbox/mapbox-gl-native/pull/14284)
  - Disable move gesture detector foreseeing the quickzoom [#14268](https://github.com/mapbox/mapbox-gl-native/pull/14268)
- - Remove request render from MapboxMap#onStart [#14245](https://github.com/mapbox/mapbox-gl-native/pull/14245)
+ - Remove request render from VietmapMap#onStart [#14245](https://github.com/mapbox/mapbox-gl-native/pull/14245)
  - Use TurfMeasurement#distance in LatLng#distanceTo [#14220](https://github.com/mapbox/mapbox-gl-native/pull/14220)
 
 ### Features
@@ -992,7 +992,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
  - Removed ILatLng and IProjectedMeteres [#13176](https://github.com/mapbox/mapbox-gl-native/pull/13176)
  - Option to consume map clicks, consuming location clicks [#13205](https://github.com/mapbox/mapbox-gl-native/pull/13205)
  - Consolidated OfflineRegionDefinitions [#13180](https://github.com/mapbox/mapbox-gl-native/pull/13180)
- - Added scrollBy() to MapboxMap, depricated  CameraUpdate.scrollBy() [#13223](https://github.com/mapbox/mapbox-gl-native/pull/13223)
+ - Added scrollBy() to VietmapMap, depricated  CameraUpdate.scrollBy() [#13223](https://github.com/mapbox/mapbox-gl-native/pull/13223)
  - Improved CustomGeometrySource constructor typing [#13200](https://github.com/mapbox/mapbox-gl-native/pull/13200)
  - Removed deprecated MarkerView[#13194](https://github.com/mapbox/mapbox-gl-native/pull/13194)
  - Annotate onMapReady with @NonNull [#13307](https://github.com/mapbox/mapbox-gl-native/pull/13307)
@@ -1120,7 +1120,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
  - Arbitrary offline region shapes [#11447](https://github.com/mapbox/mapbox-gl-native/pull/11447)
  - Make AndroidRendererFrontend to request render once per event loop [#12586](https://github.com/mapbox/mapbox-gl-native/issues/12586)
  - Converting GeoJsonSource features asynchronously [#12580](https://github.com/mapbox/mapbox-gl-native/pull/12580)
- - StyleJson configuration on MapboxMapOptions [#12664](https://github.com/mapbox/mapbox-gl-native/pull/12664)
+ - StyleJson configuration on VietmapMapOptions [#12664](https://github.com/mapbox/mapbox-gl-native/pull/12664)
  - Update MapInitializer for OfflineRegionDefinition [#12686](https://github.com/mapbox/mapbox-gl-native/pull/12686)
  - Offline symbol render example using AssetFileSource [#12676](https://github.com/mapbox/mapbox-gl-native/pull/12676)
  - Added Chinese translations [#12696](https://github.com/mapbox/mapbox-gl-native/pull/12696)
@@ -1476,7 +1476,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
 - Cherry picks to agua [#10442](https://github.com/mapbox/mapbox-gl-native/pull/10442)
 - Rework test activity gen script setup [#10365](https://github.com/mapbox/mapbox-gl-native/pull/10365)
 - Fix broken android unit tests, update test make target to SDK [#10387](https://github.com/mapbox/mapbox-gl-native/pull/10387)
-- Check for null value when calling mapboxMap.clear [#10388](https://github.com/mapbox/mapbox-gl-native/pull/10388)
+- Check for null value when calling VietmapMap.clear [#10388](https://github.com/mapbox/mapbox-gl-native/pull/10388)
 
 ## 5.2.0-beta.4 - November 3, 2017
 
@@ -1494,7 +1494,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
 - Don't save state if map hasn't been initialised [#10320](https://github.com/mapbox/mapbox-gl-native/pull/10320)
 - Make map snapshot optional [#10310](https://github.com/mapbox/mapbox-gl-native/pull/10310)
 - Synchronise locationlastions with Transifex [#10309](https://github.com/mapbox/mapbox-gl-native/pull/10309)
-- MapboxMap#addImages [#10281](https://github.com/mapbox/mapbox-gl-native/pull/10281)
+- VietmapMap#addImages [#10281](https://github.com/mapbox/mapbox-gl-native/pull/10281)
 - Move shape annotation click handling to core [#10267](https://github.com/mapbox/mapbox-gl-native/pull/10267)
 - Map snapshotter additions [#10163](https://github.com/mapbox/mapbox-gl-native/pull/10163)
 - Add velocity to gestures / port animations to SDK animators [#10202](https://github.com/mapbox/mapbox-gl-native/pull/10202)
@@ -1517,7 +1517,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
 - Add interpolator examples [#10067](https://github.com/mapbox/mapbox-gl-native/pull/10067)
 - Add an UnsatisfiedLinkError safeguard [#10180](https://github.com/mapbox/mapbox-gl-native/pull/10180)
 - Hold off handling hover events untill map has been created [#10142](https://github.com/mapbox/mapbox-gl-native/pull/10142)
-- Added `MapboxMap.getCameraForGeometry()` to get a camera with zoom level and center coordinate computed to fit a shape [#10107](https://github.com/mapbox/mapbox-gl-native/pull/10107)
+- Added `VietmapMap.getCameraForGeometry()` to get a camera with zoom level and center coordinate computed to fit a shape [#10107](https://github.com/mapbox/mapbox-gl-native/pull/10107)
 - Fine tune gesture zoom & rotation [#10134](https://github.com/mapbox/mapbox-gl-native/pull/10134)
 
 ## 5.2.0-beta.1 - October 6, 2017
@@ -1551,7 +1551,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
 - Expose setStyleJson and getStyleJson [#9714](https://github.com/mapbox/mapbox-gl-native/pull/9714)
 - update LatLngBounds activity with BottomSheet interaction [#9736](https://github.com/mapbox/mapbox-gl-native/pull/9736)
 - post updating InfoWindow update for InfoWindowAdapter [#9716](https://github.com/mapbox/mapbox-gl-native/pull/9716)
-- Annotate MapboxMap class with UiThread [#9712](https://github.com/mapbox/mapbox-gl-native/pull/9712)
+- Annotate VietmapMap class with UiThread [#9712](https://github.com/mapbox/mapbox-gl-native/pull/9712)
 - Move ZoomButtonController creation to view initalisation [#9587](https://github.com/mapbox/mapbox-gl-native/pull/9587)
 - Solve lint issues, reduce baseline [#9627](https://github.com/mapbox/mapbox-gl-native/pull/9627)
 - Remove wear module from project [#9618](https://github.com/mapbox/mapbox-gl-native/pull/9618)
@@ -1783,7 +1783,7 @@ Please see https://github.com/square/okhttp/issues/2679 for more information.
 * Telemetry Service is now include automatically via Manifest merge to simplify set up [#8338](https://github.com/mapbox/mapbox-gl-native/pull/8338)
 * Support for Android Nougat [#5910](5910-move-listener-logic-for-nougat)
   - Move location listening logic to `onStart`/`onStop` activity lifecylce methods
-* Removal of `accessToken` on `MapView` and `MapboxMap` [#5621](https://github.com/mapbox/mapbox-gl-native/issues/5621)
+* Removal of `accessToken` on `MapView` and `VietmapMap` [#5621](https://github.com/mapbox/mapbox-gl-native/issues/5621)
 * Introduction of new make targets [#5940](https://github.com/mapbox/mapbox-gl-native/issues/5940)
   - Targets for testing, running and using external tools directly from the command line
 * Cleanup Gradle files [#6009](https://github.com/mapbox/mapbox-gl-native/issues/6009)

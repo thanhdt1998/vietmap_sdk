@@ -14,7 +14,7 @@ namespace android {
 class FillExtrusionLayer : public Layer {
 public:
     using SuperTag = Layer;
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/style/layers/FillExtrusionLayer"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/style/layers/FillExtrusionLayer"; };
 
     FillExtrusionLayer(jni::JNIEnv&, jni::String&, jni::String&);
 

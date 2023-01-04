@@ -6,7 +6,7 @@
 
 /*
     android::LocalGlyphRasterizer is the JNI wrapper of
-    com/mapbox/mapboxsdk/text/LocalGlyphRasterizer
+    vn/vietmap/vietmapsdk/text/LocalGlyphRasterizer
 
     mbgl::LocalGlyphRasterizer is the portable interface
     Both implementations are in local_glyph_rasterizer.cpp
@@ -17,7 +17,7 @@ namespace android {
 
 class LocalGlyphRasterizer {
 public:
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/text/LocalGlyphRasterizer"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/text/LocalGlyphRasterizer"; };
 
     static void registerNative(jni::JNIEnv&);
 

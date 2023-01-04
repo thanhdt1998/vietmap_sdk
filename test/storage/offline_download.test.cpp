@@ -536,7 +536,7 @@ TEST(OfflineDownload, TileCountLimitExceededNoTileResponse) {
 
     uint64_t tileLimit = 0;
 
-    test.db.setOfflineMapboxTileCountLimit(tileLimit);
+    test.db.setOfflineVietmapTileCountLimit(tileLimit);
 
     test.fileSource.styleResponse = [&] (const Resource& resource) {
         EXPECT_EQ("http://127.0.0.1:3000/style.json", resource.url);
@@ -583,7 +583,7 @@ TEST(OfflineDownload, TileCountLimitExceededWithTileResponse) {
 
     uint64_t tileLimit = 1;
 
-    test.db.setOfflineMapboxTileCountLimit(tileLimit);
+    test.db.setOfflineVietmapTileCountLimit(tileLimit);
 
     test.fileSource.styleResponse = [&] (const Resource& resource) {
         EXPECT_EQ("http://127.0.0.1:3000/style.json", resource.url);

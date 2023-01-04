@@ -147,8 +147,8 @@ run-android-benchmark-$1-%: android-benchmark-$1
 # Run the test app on connected android device with specified abi
 .PHONY: run-android-$1
 run-android-$1: gradle/configuration.gradle
-	-adb uninstall com.mapbox.mapboxsdk.testapp 2> /dev/null
-	$(MBGL_ANDROID_GRADLE) -Pmapbox.abis=$2 :MapboxGLAndroidSDKTestApp:install$(BUILDTYPE) && adb shell am start -n com.mapbox.mapboxsdk.testapp/.activity.FeatureOverviewActivity
+	-adb uninstall vn.vietmap.vietmapsdk.testapp 2> /dev/null
+	$(MBGL_ANDROID_GRADLE) -Pmapbox.abis=$2 :MapboxGLAndroidSDKTestApp:install$(BUILDTYPE) && adb shell am start -n vn.vietmap.vietmapsdk.testapp/.activity.FeatureOverviewActivity
 
 # Build test app instrumentation tests apk and test app apk for specified abi
 .PHONY: android-ui-test-$1
@@ -158,12 +158,12 @@ android-ui-test-$1: gradle/configuration.gradle
 # Run test app instrumentation tests on a connected android device or emulator with specified abi
 .PHONY: run-android-ui-test-$1
 run-android-ui-test-$1: gradle/configuration.gradle
-	-adb uninstall com.mapbox.mapboxsdk.testapp 2> /dev/null
+	-adb uninstall vn.vietmap.vietmapsdk.testapp 2> /dev/null
 	$(MBGL_ANDROID_GRADLE) -Pmapbox.abis=$2 :MapboxGLAndroidSDKTestApp:connectedAndroidTest
 
 # Run Java Instrumentation tests on a connected android device or emulator with specified abi and test filter
 run-android-ui-test-$1-%: gradle/configuration.gradle
-	-adb uninstall com.mapbox.mapboxsdk.testapp 2> /dev/null
+	-adb uninstall vn.vietmap.vietmapsdk.testapp 2> /dev/null
 	$(MBGL_ANDROID_GRADLE) -Pmapbox.abis=$2 :MapboxGLAndroidSDKTestApp:connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class="$$*"
 
 # Symbolicate native stack trace with the specified abi
@@ -174,7 +174,7 @@ android-ndk-stack-$1: gradle/configuration.gradle
 # Run render tests with pixelmatch
 .PHONY: run-android-render-test-$1
 run-android-render-test-$1: $(BUILD_DEPS) gradle/configuration.gradle
-	-adb uninstall com.mapbox.mapboxsdk.testapp 2> /dev/null
+	-adb uninstall vn.vietmap.vietmapsdk.testapp 2> /dev/null
 	# delete old test results
 	rm -rf build/render-test/mapbox/
   # copy test definitions & ignore file to test app assets folder, clear old ones first
@@ -182,7 +182,7 @@ run-android-render-test-$1: $(BUILD_DEPS) gradle/configuration.gradle
 	cp -r maplibre-gl-js/test/integration MapboxGLAndroidSDKTestApp/src/main/assets
 	cp platform/node/test/ignores.json MapboxGLAndroidSDKTestApp/src/main/assets/integration/ignores.json
 	# run RenderTest.java to generate static map images
-	$(MBGL_ANDROID_GRADLE) -Pmapbox.abis=$2 :MapboxGLAndroidSDKTestApp:connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class="com.mapbox.mapboxsdk.testapp.render.RenderTest"
+	$(MBGL_ANDROID_GRADLE) -Pmapbox.abis=$2 :MapboxGLAndroidSDKTestApp:connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class="vn.vietmap.vietmapsdk.testapp.render.RenderTest"
 	# pull generated images from the device
 	adb pull "`adb shell 'printenv EXTERNAL_STORAGE' | tr -d '\r'`/mapbox/render" build/render-test
 	# copy expected result and run pixelmatch
@@ -257,7 +257,7 @@ run-android-publish: gradle/configuration.gradle
 # Dump system graphics information for the test app
 .PHONY: android-gfxinfo
 android-gfxinfo:
-	adb shell dumpsys gfxinfo com.mapbox.mapboxsdk.testapp reset
+	adb shell dumpsys gfxinfo vn.vietmap.vietmapsdk.testapp reset
 
 # Generates Activity sanity tests
 .PHONY: test-code-android
@@ -343,6 +343,6 @@ clean:
 	        ./MapboxGLAndroidSDK/build \
 	        ./MapboxGLAndroidSDK/.externalNativeBuild \
 	        ./MapboxGLAndroidSDKTestApp/build \
-	        ./MapboxGLAndroidSDKTestApp/src/androidTest/java/com/mapbox/mapboxsdk/testapp/activity/gen \
+	        ./MapboxGLAndroidSDKTestApp/src/androidTest/java/vn/vietmap/vietmapsdk/testapp/activity/gen \
 	        ./MapboxGLAndroidSDK/src/main/assets \
 		    ./MapboxGLAndroidSDKTestApp/src/main/assets/integration

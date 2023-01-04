@@ -125,7 +125,7 @@ Which will log the following samples.
 
 #### Android Sample Logging Output
 
-> com.mapbox.mapboxsdk.testapp D/# MapLibre: online_file_source.cpp: # MapLibre: online_file_source.cpp activateRequest req->resource.url = https://api.maptiler.com/tiles/v3/tiles.json
+> vn.vietmap.vietmapsdk.testapp D/# MapLibre: online_file_source.cpp: # MapLibre: online_file_source.cpp activateRequest req->resource.url = https://api.maptiler.com/tiles/v3/tiles.json
 
 #### Xcode Sample Logging Output
 

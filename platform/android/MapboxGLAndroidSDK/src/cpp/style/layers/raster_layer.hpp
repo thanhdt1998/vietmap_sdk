@@ -14,7 +14,7 @@ namespace android {
 class RasterLayer : public Layer {
 public:
     using SuperTag = Layer;
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/style/layers/RasterLayer"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/style/layers/RasterLayer"; };
 
     RasterLayer(jni::JNIEnv&, jni::String&, jni::String&);
 

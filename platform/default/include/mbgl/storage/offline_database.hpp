@@ -84,7 +84,7 @@ public:
     expected<OfflineRegionStatus, std::exception_ptr> getRegionCompletedStatus(int64_t regionID);
 
     std::exception_ptr setMaximumAmbientCacheSize(uint64_t);
-    void setOfflineMapboxTileCountLimit(uint64_t);
+    void setOfflineVietmapTileCountLimit(uint64_t);
     uint64_t getOfflineMapboxTileCountLimit();
     bool offlineMapboxTileCountLimitExceeded();
     uint64_t getOfflineMapboxTileCount();

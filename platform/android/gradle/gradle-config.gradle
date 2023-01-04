@@ -8,7 +8,7 @@ task apiKey {
         String apiKey = "$System.env.MGL_API_KEY"
         if (apiKey == "null") {
             System.out.println("You should set the MGL_API_KEY environment variable.")
-            apiKey = "YOUR_API_KEY_GOES_HERE"
+            apiKey = "K6mCEhwY3nxEGISvpg4D"
         }
         String tokenFileContents = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "<resources>\n" +

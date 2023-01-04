@@ -19,7 +19,7 @@ public:
     using PointForFn = mbgl::MapSnapshotter::PointForFn;
     using LatLngForFn = mbgl::MapSnapshotter::LatLngForFn;
 
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/snapshotter/MapSnapshot"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/snapshotter/MapSnapshot"; };
 
     static void registerNative(jni::JNIEnv&);
 

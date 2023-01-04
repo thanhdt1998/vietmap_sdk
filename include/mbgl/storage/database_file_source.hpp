@@ -231,7 +231,7 @@ public:
      * Changing or bypassing this limit without permission from Mapbox is prohibited
      * by the Mapbox Terms of Service.
      */
-    virtual void setOfflineMapboxTileCountLimit(uint64_t) const;
+    virtual void setOfflineVietmapTileCountLimit(uint64_t) const;
 
     void setResourceOptions(ResourceOptions) override;
     ResourceOptions getResourceOptions() override;

@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.mapbox.mapboxsdk.maps.MapView
+    <vn.vietmap.vietmapsdk.maps.MapView
             android:layout_gravity="center"
             android:id="@id/mapView"
             app:mapbox_cameraZoom="1"

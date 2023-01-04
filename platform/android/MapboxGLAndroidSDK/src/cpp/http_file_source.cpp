@@ -36,7 +36,7 @@ private:
 
 class HTTPRequest : public AsyncRequest {
 public:
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/http/NativeHttpRequest"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/http/NativeHttpRequest"; };
 
     HTTPRequest(jni::JNIEnv&, const Resource&, FileSource::Callback);
     ~HTTPRequest();

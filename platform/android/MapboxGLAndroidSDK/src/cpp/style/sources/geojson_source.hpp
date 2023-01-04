@@ -38,7 +38,7 @@ struct Update {
 class GeoJSONSource : public Source {
 public:
     using SuperTag = Source;
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/style/sources/GeoJsonSource"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/style/sources/GeoJsonSource"; };
 
     static void registerNative(jni::JNIEnv&);
 

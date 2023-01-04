@@ -199,7 +199,7 @@ void MapSnapshotter::addLayerAt(JNIEnv& env, jlong nativeLayerPtr, jni::jint ind
     if (index > numLayers || index < 0) {
         Log::Error(Event::JNI, "Index out of range: %i", index);
         jni::ThrowNew(env,
-                      jni::FindClass(env, "com/mapbox/mapboxsdk/style/layers/CannotAddLayerException"),
+                      jni::FindClass(env, "vn/vietmap/vietmapsdk/style/layers/CannotAddLayerException"),
                       std::string("Invalid index").c_str());
     }
     // Insert it below the current at that index
@@ -207,7 +207,7 @@ void MapSnapshotter::addLayerAt(JNIEnv& env, jlong nativeLayerPtr, jni::jint ind
         layer->addToStyle(snapshotter->getStyle(), layers.at(index)->getID());
     } catch (const std::runtime_error& error) {
         jni::ThrowNew(
-            env, jni::FindClass(env, "com/mapbox/mapboxsdk/style/layers/CannotAddLayerException"), error.what());
+            env, jni::FindClass(env, "vn/vietmap/vietmapsdk/style/layers/CannotAddLayerException"), error.what());
     }
 }
 
@@ -221,7 +221,7 @@ void MapSnapshotter::addLayerBelow(JNIEnv& env, jlong nativeLayerPtr, const jni:
             below ? mbgl::optional<std::string>(jni::Make<std::string>(env, below)) : mbgl::optional<std::string>());
     } catch (const std::runtime_error& error) {
         jni::ThrowNew(
-            env, jni::FindClass(env, "com/mapbox/mapboxsdk/style/layers/CannotAddLayerException"), error.what());
+            env, jni::FindClass(env, "vn/vietmap/vietmapsdk/style/layers/CannotAddLayerException"), error.what());
     }
 }
 
@@ -246,7 +246,7 @@ void MapSnapshotter::addLayerAbove(JNIEnv& env, jlong nativeLayerPtr, const jni:
     if (index > snapshotterLayers.size()) {
         // Not found
         jni::ThrowNew(env,
-                      jni::FindClass(env, "com/mapbox/mapboxsdk/style/layers/CannotAddLayerException"),
+                      jni::FindClass(env, "vn/vietmap/vietmapsdk/style/layers/CannotAddLayerException"),
                       std::string("Could not find layer: ").append(siblingId).c_str());
     } else if (index < snapshotterLayers.size()) {
         // Place before the sibling
@@ -258,7 +258,7 @@ void MapSnapshotter::addLayerAbove(JNIEnv& env, jlong nativeLayerPtr, const jni:
         newLayer->addToStyle(snapshotter->getStyle(), before);
     } catch (const std::runtime_error& error) {
         jni::ThrowNew(
-            env, jni::FindClass(env, "com/mapbox/mapboxsdk/style/layers/CannotAddLayerException"), error.what());
+            env, jni::FindClass(env, "vn/vietmap/vietmapsdk/style/layers/CannotAddLayerException"), error.what());
     }
 }
 
@@ -270,7 +270,7 @@ void MapSnapshotter::addSource(JNIEnv& env, const jni::Object<Source>& obj, jlon
         source->addToStyle(env, obj, snapshotter->getStyle());
     } catch (const std::runtime_error& error) {
         jni::ThrowNew(
-            env, jni::FindClass(env, "com/mapbox/mapboxsdk/style/sources/CannotAddSourceException"), error.what());
+            env, jni::FindClass(env, "vn/vietmap/vietmapsdk/style/sources/CannotAddSourceException"), error.what());
     }
 }
 

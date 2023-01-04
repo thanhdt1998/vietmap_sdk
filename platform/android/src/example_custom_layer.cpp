@@ -219,7 +219,7 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *) {
     JNIEnv *env = nullptr;
     vm->GetEnv(reinterpret_cast<void **>(&env), JNI_VERSION_1_6);
 
-    jclass customLayerClass = env->FindClass("com/mapbox/mapboxsdk/testapp/model/customlayer/ExampleCustomLayer");
+    jclass customLayerClass = env->FindClass("com/mapbox/vietmapsdk/testapp/model/customlayer/ExampleCustomLayer");
 
     JNINativeMethod methods[] = {
         {"createContext", "()J", reinterpret_cast<void *>(&nativeCreateContext)},

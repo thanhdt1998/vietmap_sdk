@@ -14,7 +14,7 @@ namespace android {
 class LocationIndicatorLayer : public Layer {
 public:
     using SuperTag = Layer;
-    static constexpr auto Name() { return "com/mapbox/mapboxsdk/location/LocationIndicatorLayer"; };
+    static constexpr auto Name() { return "vn/vietmap/vietmapsdk/location/LocationIndicatorLayer"; };
 
     LocationIndicatorLayer(jni::JNIEnv&, jni::String&);
 
