@@ -51,7 +51,7 @@ public class VietMapOptions implements Parcelable {
   private int[] compassMargins;
   private Drawable compassImage;
 
-  private boolean logoEnabled = true;
+  private boolean logoEnabled = false;
   private int logoGravity = Gravity.BOTTOM | Gravity.START;
   private int[] logoMargins;
 
@@ -484,7 +484,7 @@ public class VietMapOptions implements Parcelable {
    */
   @NonNull
   public VietMapOptions logoEnabled(boolean enabled) {
-    logoEnabled = enabled;
+    logoEnabled = false;
     return this;
   }
 

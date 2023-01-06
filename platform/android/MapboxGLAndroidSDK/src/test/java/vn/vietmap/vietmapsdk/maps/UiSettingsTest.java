@@ -51,7 +51,7 @@ public class UiSettingsTest {
   FrameLayout.LayoutParams layoutParams = mock(FrameLayout.LayoutParams.class);
 
   private UiSettings uiSettings;
-  private VietmapMapOptions VietmapMapOptions;
+  private VietMapOptions VietmapMapOptions;
 
   @Before
   public void beforeTest() {
