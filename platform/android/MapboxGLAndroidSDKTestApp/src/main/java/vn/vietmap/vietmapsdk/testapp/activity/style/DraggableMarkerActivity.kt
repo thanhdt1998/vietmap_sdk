@@ -355,12 +355,12 @@ class DraggableMarkerActivity : AppCompatActivity() {
         mapView.onDestroy()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        outState?.let {
-            mapView.onSaveInstanceState(it)
-        }
-    }
+//    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+//        super.onSaveInstanceState(outState, outPersistentState)
+//        outState?.let {
+//            mapView.onSaveInstanceState(it)
+//        }
+//    }
 }
 
 private fun vn.vietmap.vietmapsdk.maps.VietmapMap.queryRenderedSymbols(latLng: vn.vietmap.vietmapsdk.geometry.LatLng, layerId: String): List<Feature> {

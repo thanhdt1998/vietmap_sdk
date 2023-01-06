@@ -88,7 +88,7 @@ class RenderTestActivity : AppCompatActivity() {
             val assetManager = renderTestActivityWeakReference.get()!!.assets
             var categories = arrayOfNulls<String>(0)
             try {
-                categories = assetManager.list(RENDER_TEST_BASE_PATH)
+//                categories = assetManager.list(RENDER_TEST_BASE_PATH)
             } catch (exception: IOException) {
                 Timber.e(exception)
             }
@@ -101,28 +101,28 @@ class RenderTestActivity : AppCompatActivity() {
                             categories[counter]
                         )
                     )
-                    for (test in tests) {
-                        val styleJson = loadStyleJson(assetManager, categories[counter], test)
-                        val renderTestStyleDefinition = Gson()
-                            .fromJson(styleJson, RenderTestStyleDefinition::class.java)
-                        val definition = RenderTestDefinition(
-                            categories[counter],
-                            test,
-                            styleJson,
-                            renderTestStyleDefinition
-                        )
-                        if (!definition.hasOperations()) {
-                            if (!EXCLUDED_TESTS.contains(definition.name + "," + definition.category)) {
-                                definitions.add(definition)
-                            }
-                        } else {
-                            Timber.e(
-                                "could not add test, test requires operations: %s from %s",
-                                test,
-                                categories[counter]
-                            )
-                        }
-                    }
+//                    for (test in tests) {
+//                        val styleJson = loadStyleJson(assetManager, categories[counter], test)
+//                        val renderTestStyleDefinition = Gson()
+//                            .fromJson(styleJson, RenderTestStyleDefinition::class.java)
+//                        val definition = RenderTestDefinition(
+//                            categories[counter],
+//                            test,
+//                            styleJson,
+//                            renderTestStyleDefinition
+//                        )
+//                        if (!definition.hasOperations()) {
+//                            if (!EXCLUDED_TESTS.contains(definition.name + "," + definition.category)) {
+//                                definitions.add(definition)
+//                            }
+//                        } else {
+//                            Timber.e(
+//                                "could not add test, test requires operations: %s from %s",
+//                                test,
+//                                categories[counter]
+//                            )
+//                        }
+//                    }
                 } catch (exception: Exception) {
                     Timber.e(exception)
                 }

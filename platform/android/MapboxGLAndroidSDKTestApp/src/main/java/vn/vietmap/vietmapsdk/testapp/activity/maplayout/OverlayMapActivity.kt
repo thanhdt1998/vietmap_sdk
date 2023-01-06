@@ -56,12 +56,12 @@ class OverlayMapActivity : AppCompatActivity() {
         mapView.onDestroy()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        outState?.let {
-            mapView.onSaveInstanceState(it)
-        }
-    }
+//    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+//        super.onSaveInstanceState(outState, outPersistentState)
+//        outState?.let {
+//            mapView.onSaveInstanceState(it)
+//        }
+//    }
 
     class OverlayView(context: Context) : View(context) {
 

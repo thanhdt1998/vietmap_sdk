@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply from: "${rootDir}/gradle/native-build.gradle"
 
 android {
-    compileSdkVersion androidVersions.compileSdkVersion
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "vn.vietmap.vietmapsdk.testapp"
-        minSdkVersion androidVersions.minSdkVersion
-        targetSdkVersion androidVersions.targetSdkVersion
+        minSdkVersion 14
+        targetSdkVersion 33
         versionCode 13
         versionName "6.0.0"
         testInstrumentationRunner "vn.vietmap.vietmapsdk.InstrumentationRunner"

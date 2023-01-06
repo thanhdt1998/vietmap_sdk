@@ -110,7 +110,7 @@ class VisibilityChangeActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         if (runnable != null) {
-            handler.removeCallbacks(runnable)
+            handler.removeCallbacks(runnable!!)
             runnable = null
         }
         mapView!!.onStop()

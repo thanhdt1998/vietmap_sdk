@@ -229,12 +229,12 @@ class MapSnapshotterWithinExpression : AppCompatActivity() {
         mapView.onDestroy()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        outState?.let {
-            mapView.onSaveInstanceState(it)
-        }
-    }
+//    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+//        super.onSaveInstanceState(outState, outPersistentState)
+//        outState?.let {
+//            mapView.onSaveInstanceState(it)
+//        }
+//    }
 
     private fun bufferLineStringGeometry(): Polygon {
         // TODO replace static data by Turf#Buffer: mapbox-java/issues/987

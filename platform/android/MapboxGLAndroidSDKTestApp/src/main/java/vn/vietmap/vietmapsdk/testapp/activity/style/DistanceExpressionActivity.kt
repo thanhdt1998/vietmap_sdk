@@ -126,12 +126,12 @@ class DistanceExpressionActivity : AppCompatActivity() {
         mapView.onDestroy()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        outState?.let {
-            mapView.onSaveInstanceState(it)
-        }
-    }
+//    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+//        super.onSaveInstanceState(outState, outPersistentState)
+//        outState?.let {
+//            mapView.onSaveInstanceState(it)
+//        }
+//    }
 
     companion object {
         const val POINT_ID = "point"

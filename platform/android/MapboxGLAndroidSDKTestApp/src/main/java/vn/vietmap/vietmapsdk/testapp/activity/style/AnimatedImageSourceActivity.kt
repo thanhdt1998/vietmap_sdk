@@ -61,7 +61,7 @@ class AnimatedImageSourceActivity : AppCompatActivity(),
                 .withLayer(layer)
         ) { style: vn.vietmap.vietmapsdk.maps.Style? ->
             runnable = RefreshImageRunnable(imageSource, handler)
-            handler.postDelayed(runnable, 100)
+            handler.postDelayed(runnable as RefreshImageRunnable, 100)
         }
     }
 
@@ -83,7 +83,7 @@ class AnimatedImageSourceActivity : AppCompatActivity(),
     override fun onStop() {
         super.onStop()
         mapView!!.onStop()
-        handler.removeCallbacks(runnable)
+        runnable?.let { handler.removeCallbacks(it) }
     }
 
     override fun onDestroy() {
