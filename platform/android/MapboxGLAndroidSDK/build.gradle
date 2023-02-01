@@ -8,7 +8,7 @@ dependencies {
     lintChecks project(":MapboxGLAndroidSDKLint")
     api dependenciesList.mapboxJavaGeoJSON
     api dependenciesList.mapboxAndroidGestures
-
+    implementation 'androidx.annotation:annotation:1.5.0'
     implementation dependenciesList.mapboxJavaTurf
     implementation dependenciesList.supportAnnotations
     implementation dependenciesList.supportFragmentV4

@@ -35,17 +35,6 @@ import vn.vietmap.vietmapsdk.maps.widgets.CompassView;
 import vn.vietmap.vietmapsdk.net.ConnectivityReceiver;
 import vn.vietmap.vietmapsdk.storage.FileSource;
 import vn.vietmap.vietmapsdk.utils.BitmapUtils;
-import vn.vietmap.vietmapsdk.annotations.Annotation;
-import vn.vietmap.vietmapsdk.constants.VietmapConstants;
-import vn.vietmap.vietmapsdk.exceptions.VietmapConfigurationException;
-import vn.vietmap.vietmapsdk.location.LocationComponent;
-import vn.vietmap.vietmapsdk.maps.renderer.MapRenderer;
-import vn.vietmap.vietmapsdk.maps.renderer.glsurfaceview.GLSurfaceViewMapRenderer;
-import vn.vietmap.vietmapsdk.maps.renderer.glsurfaceview.VietmapGLSurfaceView;
-import vn.vietmap.vietmapsdk.maps.renderer.textureview.TextureViewMapRenderer;
-import vn.vietmap.vietmapsdk.maps.widgets.CompassView;
-import vn.vietmap.vietmapsdk.storage.FileSource;
-import vn.vietmap.vietmapsdk.utils.BitmapUtils;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -54,20 +43,6 @@ import java.util.List;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import static vn.vietmap.vietmapsdk.maps.widgets.CompassView.TIME_MAP_NORTH_ANIMATION;
-import static vn.vietmap.vietmapsdk.maps.widgets.CompassView.TIME_WAIT_IDLE;
-
-import vn.vietmap.vietmapsdk.annotations.Annotation;
-import vn.vietmap.vietmapsdk.constants.VietmapConstants;
-import vn.vietmap.vietmapsdk.exceptions.VietmapConfigurationException;
-import vn.vietmap.vietmapsdk.location.LocationComponent;
-import vn.vietmap.vietmapsdk.maps.renderer.MapRenderer;
-import vn.vietmap.vietmapsdk.maps.renderer.glsurfaceview.GLSurfaceViewMapRenderer;
-import vn.vietmap.vietmapsdk.maps.renderer.glsurfaceview.VietmapGLSurfaceView;
-import vn.vietmap.vietmapsdk.maps.renderer.textureview.TextureViewMapRenderer;
-import vn.vietmap.vietmapsdk.maps.widgets.CompassView;
-import vn.vietmap.vietmapsdk.storage.FileSource;
-import vn.vietmap.vietmapsdk.utils.BitmapUtils;
 
 /**
  * <p>
@@ -1433,7 +1408,7 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
   }
 
   /**
-//   * Sets the strict mode that will throw the {@link vn.mapbox.vietmapsdk.MapStrictModeException}
+//   * Sets the strict mode that will throw the
    * whenever the map would fail silently otherwise.
    *
    * @param strictModeEnabled true to enable the strict mode, false otherwise
